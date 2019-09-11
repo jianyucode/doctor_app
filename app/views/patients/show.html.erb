@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @patient.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @patient.age %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @patient.email %>
+</p>
+
+<p>
+  <strong>Upcoming Appointments</strong><br />
+    <% @patient.appointments.each do |a| %>
+    <%= a.date %> <br />
+    <% end %>
+</p>
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %>
+<%= link_to 'New Appointment', new_appointment_path %>
